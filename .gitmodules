@@ -10,3 +10,6 @@
 [submodule "BaseBin/opainject"]
 	path = BaseBin/opainject
 	url = https://github.com/opa334/opainject
+[submodule "Procursus"]
+	path = Procursus
+	url = https://github.com/roothide/Procursus-roothide.git

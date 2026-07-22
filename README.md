@@ -6,6 +6,28 @@
 
 - Discord: https://discord.gg/ZvY2Yjw8GA
 
+## Repository layout
+
+| Path | Role |
+|------|------|
+| `Application/` | Dopamine jailbreak app (tipa) |
+| `BaseBin/` | Jailbreak basebin tools and hooks |
+| `Packages/` | Dopamine-specific debs (`jbctl` link, libkrw, libroot) |
+| `Procursus/` | [roothide/Procursus-roothide](https://github.com/roothide/Procursus-roothide) — full Procursus package build tree (X11, Fluxbox, networking tools, etc.) |
+
+Clone with submodules:
+
+```bash
+git clone --recursive <this-repo-url>
+# or, if already cloned:
+git submodule update --init --recursive
+```
+
+Building the tipa only needs the existing BaseBin/exploit submodules. `Procursus/` is large (~240MB) and is only required if you want to build the wider package set locally.
+
+The tipa bootstrap ships a minimal Procursus userspace. Broader Unix packages (including `fluxbox`, `libx11`, `xorg-server`, `curl`, `wget`, `openssh`, `netcat`, `nmap`, …) live under `Procursus/` and can be built there or installed from the RootHide Procursus apt repo after jailbreak.
+
+See `Procursus/README.md` and `Procursus/makefiles/` for package build instructions.
 
 # How To Build tipa file
 
